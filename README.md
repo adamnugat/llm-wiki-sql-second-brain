@@ -27,12 +27,10 @@ Copy the full idea file from Andrej Karpathy's repository page:
 
 Paste the entire content into the agent chat while your newly created folder is the active context.
 
-Immediately after that, append this follow-up prompt:
+Immediately after that, append this follow-up prompt (Thanks to Nate Herk for helping popularize this workflow:
+https://www.youtube.com/@nateherk):
 
 ```text
-Thanks to Nate Herk for helping popularize this workflow:
-https://www.youtube.com/@nateherk
-
 You are now my LLM Wiki agent. Implement this exact idea file as my complete second brain. Guide me step-by-step: create the CLAUDE.md schema file with full rules, set up index.md and log.md, define folder conventions, and show me the first ingest example. From now on, every interaction follows the schema.
 ```
 
@@ -122,6 +120,23 @@ Example follow-up prompt:
 
 ```text
 Based on this SQL knowledge base, create the exception rules and usage rules I need in order to query this database correctly. Document technical nuances, data extraction rules, special cases, edge conditions, and any patterns that would help future SQL generation stay accurate.
+
+If I provide additional rules or exceptions below, treat them as authoritative domain guidance and integrate them into the knowledge base structure in the most useful way.
+
+You can gather these rules from either of the following:
+
+1. Manual notes that I paste directly into this chat.
+2. Analysis of files that I attach or point you to, such as SQL queries, ETL scripts, ORM models, API code, reporting logic, stored procedures, internal docs, or other technical notes.
+
+When analyzing files, extract only durable database-querying knowledge: business rules, join constraints, filtering rules, naming inconsistencies, soft-delete behavior, status semantics, date logic, tenant or environment scoping, and known exceptions.
+
+Then convert those findings into reusable exception rules and usage rules for future SQL generation.
+
+Optional manual rules:
+--> PASTE EXCEPTIONS, EDGE CASES, AND QUERYING RULES HERE <--
+
+Optional files to analyze:
+--> LIST FILE PATHS OR ATTACH FILES HERE <--
 ```
 
 ## Suggested Workflow Summary
